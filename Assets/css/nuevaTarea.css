@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+
+    /* font: inherit; */
+
+}
+
+
+.cabecera {
+    background-color: rgba(0, 29, 108, 0.545);
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    float: none;
+    line-height: 14px;
+    position: static;
+}
+
+.cabecera h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 40px;
+    font-size: xx-large;
+}
+
+.centro {
+    /* background-color: goldenrod; */
+    display: flex;
+
+}
+
+.lateral {
+    margin-right: 20px;
+    flex: 1 0 0;
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: center; */
+    border-right: 2px solid rgb(129, 129, 130);
+    border-bottom: 2px solid rgb(129, 129, 130);
+}
+
+.lateral div {
+    /* height: fit-content; */
+    /* flex: 100%; */
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 15px;
+    background-color: rgb(208, 193, 226);
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.5em;
+}
+
+.cuerpo {
+    flex: 4 0 0;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#submit {
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background-color: rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+input,
+select {
+    border-radius: 5px;
+    padding: 3px;
+    border-style: solid;
+}
+
+
+
+footer {
+    /* margin-top: 50px; */
+    position: relative;
+    width: 100%;
+    background-color: #7483af;
+    text-align: center;
+    padding: 20px;
+    bottom: 0px;
+}
+
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5b399e;
+    color: white;
+}

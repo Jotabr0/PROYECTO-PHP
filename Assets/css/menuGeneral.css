@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    vertical-align: baseline;
+    text-align: inherit;
+    color: inherit;
+    background: transparent;
+}
+
+.cabecera {
+    background-color: rgba(0, 29, 108, 0.545);
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    float: none;
+    line-height: 14px;
+    position: static;
+}
+
+.cabecera h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 40px;
+    font-size: xx-large;
+}
+
+.centro{
+    margin-top: 50px;
+    text-align: center;
+}
+.centro div{
+    text-transform: uppercase;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(208, 193, 226);
+    padding: 20px;
+    cursor: pointer;   
+}
+.centro div:hover{
+    background-color: rgb(149, 130, 167);
+}
