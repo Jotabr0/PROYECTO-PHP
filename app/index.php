@@ -4,7 +4,7 @@ define ('CONTROLLERS_FOLDER',"controllers/");
 
 define('DEFAULT_CONTROLLER',"tareas");
 
-define('DEFAULT_ACTION',"listar");
+define('DEFAULT_ACTION',"menuGeneral");
 
 $controller = DEFAULT_CONTROLLER;
 

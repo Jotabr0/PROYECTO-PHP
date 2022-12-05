@@ -18,9 +18,11 @@
             </div>
         </div>
         <div class="centro">
-            <div>
-                <h1>Incidencias/tareas</h1>
-            </div>
+            <a href="index.php?controller=tareas&action=listar">
+                <div>
+                    <h1>Incidencias/tareas</h1>
+                </div>
+            </a>
             <div>
                 <h1>Añadir nueva incidencia/tarea</h1>
             </div>
@@ -36,7 +38,7 @@
             <div>
                 <h1>Buscar/Filtrar tareas</h1>
             </div>
-            
+
         </div>
         <div class="pie"></div>
     </main>

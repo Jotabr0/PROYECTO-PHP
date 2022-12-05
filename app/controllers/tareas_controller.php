@@ -1,5 +1,11 @@
 <?php
 
+function menuGeneral(){
+   include 'views/menuGeneral.php';
+}
+
+//index.php?controller=tareas&action=listar
+
 function listar(){
     require 'models/tareas_model.php';
 
@@ -7,6 +13,11 @@ function listar(){
 
     include 'views/listaTareas.php';
 }
+
+
+
+
+//index.php?controller=tareas&action=ver&id=1
 
 function ver ()
 {
@@ -20,7 +31,7 @@ function ver ()
    if ($tarea === null)
       die("Identificador de tarea incorrecto");
    //Pasamos a la vista toda la información que se desea representar
-   include('views/listaTareas.php');
+   include('views/verTarea.php');
 }
 
 ?>

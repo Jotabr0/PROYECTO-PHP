@@ -55,12 +55,12 @@
                     </tr>
                     <?php foreach ($tareas as $tarea) : ?>
                         <tr>
-                            <td><?php echo $tarea['descripcion'] ?></td>
-                            <td><?php echo $tarea['provincia'] ?></td>
-                            <td><?php echo $tarea['poblacion'] ?></td>
-                            <td><?php echo $tarea['direccion'] ?></td>
-                            <td><?php echo $tarea['operario'] ?></td>
-                            <td><?php echo $tarea['fecharealizacion'] ?></td>
+                            <td><?=$tarea['descripcion'] ?></td>
+                            <td><?=$tarea['provincia'] ?></td>
+                            <td><?=$tarea['poblacion'] ?></td>
+                            <td><?=$tarea['direccion'] ?></td>
+                            <td><?=$tarea['operario'] ?></td>
+                            <td><?=$tarea['fecharealizacion'] ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

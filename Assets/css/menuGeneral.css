@@ -42,3 +42,8 @@
 .centro div:hover{
     background-color: rgb(149, 130, 167);
 }
+
+div a{
+    
+    text-decoration: none;
+}

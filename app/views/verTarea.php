@@ -18,7 +18,7 @@
    
     <tr>
       <td><?php echo $tarea['descripcion']?></td>
-      <td><?php echo $tarea(['provincia'])?></td>
+      <td><?php echo $tarea['provincia']?></td>
     </tr>
     
   </table>
