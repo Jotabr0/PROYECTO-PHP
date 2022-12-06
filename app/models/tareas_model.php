@@ -1,16 +1,18 @@
 <?php
 
-function getConnection()
-{
-   $user = 'root';
-   $pwd = '';
-   return new PDO('mysql:host=localhost;dbname=miproyectophp', $user, $pwd);
-}
+require 'claseConexion.php';
 
+// function getConnection()
+// {
+//    $user = 'root';
+//    $pwd = '';
+//    return new PDO('mysql:host=localhost;dbname=miproyectophp', $user, $pwd);
+// }
 
 function getTareas()
 {
-   $db = getConnection();
+   $bd=conexion::getInstance();
+   $db=$bd->connect();
    $result = $db->query('SELECT * FROM tareas');
    $tareas = array();
    while ($tarea = $result->fetch())
@@ -21,7 +23,8 @@ function getTareas()
 
 function getTarea($id)
 {
-   $db = getConnection();
+   $bd=conexion::getInstance();
+   $db=$bd->connect();
    $query = 'SELECT * FROM tareas WHERE id = ?';
    $stmt = $db->prepare($query);
    $stmt->execute(array($id));
