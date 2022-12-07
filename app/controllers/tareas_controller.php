@@ -11,7 +11,7 @@ function listar(){
 
     $tareas = getTareas();
 
-    include 'views/listaTareas.php';
+    include 'views/listaTareasBlade.php';
 }
 
 
