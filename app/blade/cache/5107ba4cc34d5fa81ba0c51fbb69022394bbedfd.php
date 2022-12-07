@@ -5,28 +5,30 @@
 <?php $__env->startSection('tituloCabecera','Lista de Tareas'); ?>
 
 <?php $__env->startSection('lateral'); ?>
-<div>
-    <h1>Incidencias/tareas</h1>
-</div>
+
 <div>
     <h1>Añadir nueva incidencia/tarea</h1>
 </div>
-<div>
-    <h1>Modificar incidencia/tarea</h1>
-</div>
-<div>
-    <h1>Eliminar tarea</h1>
-</div>
-<div>
-    <h1>Cambiar estado de incidencia/tarea</h1>
-</div>
+
 <div>
     <h1>Buscar/Filtrar tareas</h1>
 </div>
 
+<div>
+    <h1>Tareas Pendientes</h1>
+</div>
+
+<div>
+    <h1>Gestion de usuarios</h1>
+</div>
+
+
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('centro'); ?>
+
+
 
 <table class="listatareas">
     <tr>
@@ -45,9 +47,45 @@
             <td><?php echo e($tarea['direccion']); ?></td>
             <td><?php echo e($tarea['operario']); ?></td>
             <td><?php echo e($tarea['fecharealizacion']); ?></td>
+            <td><a href="">Borrar</a></td>
+            <td><a href="">Modificar</a></td>
+            <td><a href="">Vista Completa</a></td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </table>
+
+
+<div class="divpaginacion">
+    <?php if(isset($_GET['pagina'])): ?>
+    <a href="index.php?controller=tareas&action=listar&pagina=<?php echo e($paginaactual-1); ?>"><<</a>
+    <?php endif; ?>
+    
+<?php for($i = 1; $i<=$total_paginas; $i++): ?>
+    <?php if(isset($_GET['pagina'])): ?>
+        <?php if(($_GET['pagina'])==$i): ?>
+            <a class="paginaactual" href="index.php?controller=tareas&action=listar&pagina=<?php echo e($i); ?>"><?php echo e($i); ?></a>
+        <?php else: ?>
+            <a href="index.php?controller=tareas&action=listar&pagina=<?php echo e($i); ?>"><?php echo e($i); ?></a>
+        <?php endif; ?>
+
+    <?php else: ?>
+        <?php if($i==1): ?>
+            <a class="paginaactual" href="index.php?controller=tareas&action=listar&pagina=<?php echo e($i); ?>"><?php echo e($i); ?></a>  
+        <?php else: ?>
+        <a href="index.php?controller=tareas&action=listar&pagina=<?php echo e($i); ?>"><?php echo e($i); ?></a>
+        <?php endif; ?>
+    <?php endif; ?>
+   
+<?php endfor; ?>
+
+<?php if(isset($_GET['pagina'])&&$_GET['pagina']<$total_paginas): ?>
+<a href="index.php?controller=tareas&action=listar&pagina=<?php echo e($paginaactual+1); ?>">>></a>
+<?php endif; ?>
+<?php if(!isset($_GET['pagina'])): ?>
+<a href="index.php?controller=tareas&action=listar&pagina=<?php echo e($paginaactual+1); ?>">>></a>
+<?php endif; ?>
+    
+</div>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts/plantilla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\2DAW\DWEC\Ejemplos\Ejercicios PHP\PROYECTO PHP\app\blade\viewsBlade/listaTareas.blade.php ENDPATH**/ ?>

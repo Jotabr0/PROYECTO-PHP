@@ -11,14 +11,17 @@ require 'claseConexion.php';
 
 function getTareas()
 {
+   require("paginacionTareas.php");
+
    $bd = conexion::getInstance();
    $db = $bd->connect();
-   $result = $db->query('SELECT * FROM tareas');
+   $result = $db->query("SELECT * FROM tareas LIMIT $empezar_desde, $tamano_paginas");
    $tareas = array();
    while ($tarea = $result->fetch())
       $tareas[] = $tarea;
 
    return $tareas;
+
 }
 
 function getTarea($id)
