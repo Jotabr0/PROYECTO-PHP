@@ -23,9 +23,11 @@
                     <h1>Incidencias/tareas</h1>
                 </div>
             </a>
+            <a href="index.php?controller=tareas&action=menuCrear">
             <div>
                 <h1>Añadir nueva incidencia/tarea</h1>
             </div>
+            </a>
             <div>
                 <h1>Modificar incidencia/tarea</h1>
             </div>

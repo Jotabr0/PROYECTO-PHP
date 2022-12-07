@@ -42,7 +42,7 @@
 
             <div class="cuerpo">
 
-                <form>
+                <form method="POST" action="index.php?controller=tareas&action=guardar">
                     <label for="dni">NIF o CIF:</label><br>
                     <input type="text" id="dni" name="dni" placeholder="12345678X"><br><br>
                     <label for="contacto">Persona de contacto:</label><br>

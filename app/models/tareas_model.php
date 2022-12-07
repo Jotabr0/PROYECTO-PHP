@@ -11,8 +11,8 @@ require 'claseConexion.php';
 
 function getTareas()
 {
-   $bd=conexion::getInstance();
-   $db=$bd->connect();
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
    $result = $db->query('SELECT * FROM tareas');
    $tareas = array();
    while ($tarea = $result->fetch())
@@ -23,11 +23,23 @@ function getTareas()
 
 function getTarea($id)
 {
-   $bd=conexion::getInstance();
-   $db=$bd->connect();
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
    $query = 'SELECT * FROM tareas WHERE id = ?';
    $stmt = $db->prepare($query);
    $stmt->execute(array($id));
    $tarea = $stmt->fetch();
    return $tarea;
+}
+
+function crearTarea(array $datos)
+{
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $query = 'INSERT INTO 
+   tareas(dni,persona,telefono,descripcion,poblacion,codigopostal,provincia,estado,operario,fecharealizacion)
+    VALUES(?,?,?,?,?,?,?,?,?,?)';
+
+   $stmt = $db->prepare($query);
+   $stmt->execute($datos);
 }
