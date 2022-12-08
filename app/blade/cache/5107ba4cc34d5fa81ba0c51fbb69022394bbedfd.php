@@ -4,27 +4,7 @@
 
 <?php $__env->startSection('tituloCabecera','Lista de Tareas'); ?>
 
-<?php $__env->startSection('lateral'); ?>
 
-<div>
-    <h1>Añadir nueva incidencia/tarea</h1>
-</div>
-
-<div>
-    <h1>Buscar/Filtrar tareas</h1>
-</div>
-
-<div>
-    <h1>Tareas Pendientes</h1>
-</div>
-
-<div>
-    <h1>Gestion de usuarios</h1>
-</div>
-
-
-
-<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('centro'); ?>
 
@@ -38,6 +18,7 @@
         <th>DIRECCION</th>
         <th>OPERARIO</th>
         <th>FECHA REALIZACION</th>
+        <th>ESTADO</th>
     </tr>
     <?php $__currentLoopData = $tareas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tarea): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
         <tr>
@@ -47,9 +28,10 @@
             <td><?php echo e($tarea['direccion']); ?></td>
             <td><?php echo e($tarea['operario']); ?></td>
             <td><?php echo e($tarea['fecharealizacion']); ?></td>
-            <td><a href="">Borrar</a></td>
-            <td><a href="">Modificar</a></td>
-            <td><a href="">Vista Completa</a></td>
+            <td><?php echo e($tarea['estado']); ?></td>
+            <td><a href="index.php?controller=tareas&action=verBorrar&id=<?php echo e($tarea['id']); ?>">Borrar</a></td>
+            <td><a href="index.php?controller=tareas&action=verModificar&id=<?php echo e($tarea['id']); ?>">Modificar</a></td>
+            <td><a href="index.php?controller=tareas&action=ver&id=<?php echo e($tarea['id']); ?>" target="_blank">Vista Completa</a></td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </table>

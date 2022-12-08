@@ -24,6 +24,21 @@ function getTareas()
 
 }
 
+function getTareasPendientes(){
+
+   
+
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $result = $db->query("SELECT * FROM tareas WHERE estado='P'");
+   $tareas = array();
+   while ($tarea = $result->fetch())
+      $tareas[] = $tarea;
+
+   return $tareas;
+
+}
+
 function getTarea($id)
 {
    $bd = conexion::getInstance();
@@ -33,6 +48,17 @@ function getTarea($id)
    $stmt->execute(array($id));
    $tarea = $stmt->fetch();
    return $tarea;
+}
+
+function borraTarea($id){
+
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $query = 'DELETE FROM tareas WHERE id= ?';
+
+   $stmt = $db->prepare($query);
+   $stmt->execute(array($id));
+
 }
 
 function crearTarea(array $datos)
@@ -45,4 +71,16 @@ function crearTarea(array $datos)
 
    $stmt = $db->prepare($query);
    $stmt->execute($datos);
+}
+
+function modificarTarea(array $datos){
+
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $query = 'UPDATE tareas SET dni = ?, persona = ?, telefono = ?, descripcion = ?, email = ?, direccion = ?, poblacion = ?, codigopostal = ?, provincia = ?, estado = ?, operario = ?, fecharealizacion = ?, anotacionesantes = ? WHERE (id = ?)';
+
+   $stmt = $db->prepare($query);
+   $stmt->execute($datos);
+
+
 }

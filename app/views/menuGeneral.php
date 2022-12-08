@@ -8,7 +8,6 @@
     <title>Menu</title>
     <link rel="stylesheet" href="/Ejercicios PHP/PROYECTO PHP/Assets/css/menuGeneral.css">
 </head>
-</head>
 
 <body>
     <main>
@@ -28,18 +27,15 @@
                 <h1>Añadir nueva incidencia/tarea</h1>
             </div>
             </a>
-            <div>
-                <h1>Modificar incidencia/tarea</h1>
-            </div>
-            <div>
-                <h1>Eliminar tarea</h1>
-            </div>
-            <div>
-                <h1>Cambiar estado de incidencia/tarea</h1>
-            </div>
+    
             <div>
                 <h1>Buscar/Filtrar tareas</h1>
             </div>
+
+            <div>
+                <h1>Gestion Usuarios</h1>
+            </div>
+            
 
         </div>
         <div class="pie"></div>

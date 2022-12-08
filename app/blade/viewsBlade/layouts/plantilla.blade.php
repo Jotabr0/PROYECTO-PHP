@@ -20,12 +20,38 @@
         </div>
         <div class="centro">
             <div class="lateral">
-            @yield('lateral')
+
+                <div>
+                    <a href="index.php?controller=tareas&action=listar">
+                        <h1>Tareas/Incidencias</h1>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="index.php?controller=tareas&action=menuCrear">
+                        <h1>Añadir nueva incidencia/tarea</h1>
+                    </a>
+                </div>
+
+                <div>
+                    <h1>Buscar/Filtrar tareas</h1>
+                </div>
+
+                <div>
+                    <a href="index.php?controller=tareas&action=listarPendientes">
+                        <h1>Tareas Pendientes</h1>
+                    </a>
+                </div>
+
+                <div>
+                    <h1>Gestion de usuarios</h1>
+                </div>
+
             </div>
 
             <div class="cuerpo">
 
-            @yield('centro')
+                @yield('centro')
 
             </div>
 

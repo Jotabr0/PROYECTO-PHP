@@ -4,27 +4,7 @@
 
 @section('tituloCabecera','Lista de Tareas')
 
-@section('lateral')
 
-<div>
-    <h1>Añadir nueva incidencia/tarea</h1>
-</div>
-
-<div>
-    <h1>Buscar/Filtrar tareas</h1>
-</div>
-
-<div>
-    <h1>Tareas Pendientes</h1>
-</div>
-
-<div>
-    <h1>Gestion de usuarios</h1>
-</div>
-
-
-
-@endsection
 
 @section('centro')
 
@@ -38,6 +18,7 @@
         <th>DIRECCION</th>
         <th>OPERARIO</th>
         <th>FECHA REALIZACION</th>
+        <th>ESTADO</th>
     </tr>
     @foreach ($tareas as $tarea) 
         <tr>
@@ -47,9 +28,10 @@
             <td>{{$tarea['direccion']}}</td>
             <td>{{$tarea['operario']}}</td>
             <td>{{$tarea['fecharealizacion']}}</td>
-            <td><a href="">Borrar</a></td>
-            <td><a href="">Modificar</a></td>
-            <td><a href="">Vista Completa</a></td>
+            <td>{{$tarea['estado']}}</td>
+            <td><a href="index.php?controller=tareas&action=verBorrar&id={{$tarea['id']}}">Borrar</a></td>
+            <td><a href="index.php?controller=tareas&action=verModificar&id={{$tarea['id']}}">Modificar</a></td>
+            <td><a href="index.php?controller=tareas&action=ver&id={{$tarea['id']}}" target="_blank">Vista Completa</a></td>
         </tr>
     @endforeach
 </table>
