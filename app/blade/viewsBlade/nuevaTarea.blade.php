@@ -1,5 +1,66 @@
 @extends('layouts/plantilla')
 
+@section('validacion')
+
+<?php
+
+
+@include(__DIR__ . '/../../models/validaciones.php');
+
+$contacto = isset($_POST['contacto']) ? $_POST['contacto'] : null;
+$telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+$dni = isset($_POST['dni']) ? $_POST['dni'] : null;
+$descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
+$valuepostal = isset($_POST['valuepostal']) ? $_POST['valuepostal'] : null;
+$fecharealizacion = isset($_POST['fecharealizacion']) ? $_POST['fecharealizacion'] : null;
+
+
+$errores = array();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (!validaCodigoPostal($valuepostal)) {
+        $errores['valuepostal'] = 'Código postal no válido';
+    }
+
+   
+    if (!validaRequerido($contacto)) {
+        $errores['contacto'] = 'El campo contacto es incorrecto.';
+    }
+    
+
+    if (!validaRequerido($descripcion)) {
+        $errores['descripcion'] = 'El campo descripcion está vacío.';
+    }
+
+    if (!validaTelefono($telefono)) {
+        $errores['telefono'] = 'Número incorrecto';
+    }
+
+    if (!validaDNI($dni)) {
+        $errores['dni'] = 'DNI incorrecto';
+    }
+
+    if (!validaFecha($fecharealizacion)) {
+        $errores['fecharealizacion'] = 'La fecha no puede ser anterior a hoy';
+    }
+
+
+   
+    if (!validaEmail($email)) {
+        $errores['email'] = 'El campo email es incorrecto.';
+    }
+    
+    if (!$errores) {
+        header('Location:index.php?controller=tareas&action=guardar');
+        exit;
+    }
+}
+?>
+
+@endsection
+
 @section('pestaña', 'Tarea')
 
 @section('tituloCabecera','Información de Tarea')
@@ -8,23 +69,28 @@
 
 @section('centro')
 
-<form method="POST" action="index.php?controller=tareas&action=guardar">
+
+<form method="POST" action="#">
     <label for="dni">NIF o CIF:</label><br>
-    <input type="text" id="dni" name="dni" placeholder="12345678X"><br><br>
+    <input type="text" id="dni" name="dni" placeholder="12345678X" value="<?php echo $dni ?>"><span class="errores"><?php echo isset($errores['dni']) ? $errores['dni'] : null ?></span><br><br>
     <label for="contacto">Persona de contacto:</label><br>
-    <input type="text" id="contacto" name="contacto" placeholder="Nombre y apellidos"><br><br>
+    <input type="text" id="contacto" name="contacto" placeholder="Nombre y apellidos" value="<?php echo $contacto ?>"><span class="errores"><?php echo isset($errores['contacto']) ? $errores['contacto'] : null ?></span><br><br>
     <label for="telefono">Teléfono:</label><br>
-    <input type="text" id="telefono" name="telefono" placeholder="XXX-XXX-XXX"><br><br>
+    <input type="text" id="telefono" name="telefono" placeholder="XXX-XXX-XXX" value="<?php echo $telefono ?>"><span class="errores"><?php echo isset($errores['telefono']) ? $errores['telefono'] : null ?></span><br><br>
+    <label for="email">Correo electrónico:</label><br>
+    <input type="text" id="email" name="email" placeholder="nombre@gmail.com" value="<?php echo $email ?>"><span class="errores"><?php echo isset($errores['email']) ? $errores['email'] : null ?> </span><br><br>
     <label for="descripcion">Descripción:</label><br>
-    <input type="text" id="descripcion" name="descripcion"><br><br>
+    <input type="text" id="descripcion" name="descripcion" value="<?php echo $descripcion ?>"><span class="errores"><?php echo isset($errores['descripcion']) ? $errores['descripcion'] : null ?> </span><br><br>
     <label for="poblacion">Población:</label><br>
     <input type="text" id="poblacion" name="poblacion"><br><br>
+    <label for="direccion">Dirección:</label><br>
+    <input type="text" id="direccion" name="direccion"><br><br>
     <label for="valuepostal">Código Postal:</label><br>
-    <input type="text" id="valuepostal" name="valuepostal"><br><br>
+    <input type="text" id="valuepostal" name="valuepostal" value="<?php echo $valuepostal ?>"><span class="errores"><?php echo isset($errores['valuepostal']) ? $errores['valuepostal'] : null ?> </span><br><br>
     <label for="provincia">Provincia:</label><br>
 
-    <select name="provincia" id="provincia">
-        <option value="">Elige Provincia</option>
+    <select name="provincia" required><span class="errores"><?php echo isset($errores['provincia']) ? $errores['provincia'] : null ?> </span>
+        <option value="">Selecciona Provincia</option>
         <option value="01">Alava/Araba</option>
         <option value="02">Albacete</option>
         <option value="03">Alicante</option>
@@ -88,14 +154,16 @@
 
     <label for="operario">Operario:</label><br>
     <select name="operario" id="operario">
-        <option value="">Operarios</option>
-        <option value="1">Juan Fernandez</option>
-        <option value="2">José María Gil</option>
-        <option value="3">David López</option>
+        <option>Selecciona Operario</option>
+        <option>Juan Fernandez</option>
+        <option>José María Gil</option>
+        <option>David López</option>
     </select><br><br>
 
     <label for="fecharealizacion">Fecha de realización:</label><br>
-    <input type="date" id="fecharealizacion" name="fecharealizacion"><br><br>
+    <input type="date" id="fecharealizacion" name="fecharealizacion" value="<?php echo $fecharealizacion ?>"><span class="errores"><?php echo isset($errores['fecharealizacion']) ? $errores['fecharealizacion'] : null ?> </span><br><br>
+    <label for="poblacion">Anotaciones Iniciales:</label><br>
+    <input type="text" id="anotacionesantes" name="anotacionesantes"><br><br>
 
     <input id="submit" type="submit" value="Insertar">
 </form>

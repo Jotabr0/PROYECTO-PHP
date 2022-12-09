@@ -1,3 +1,4 @@
+@yield('validacion')
 <!DOCTYPE html>
 <html lang="en">
 

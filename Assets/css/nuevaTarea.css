@@ -175,3 +175,9 @@ th {
     background-color: #5b399e;
     color: white;
 }
+
+.errores{
+    color: red;
+    margin-left: 10px;
+    font-size: 0.8em;
+}

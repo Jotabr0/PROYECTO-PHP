@@ -137,10 +137,10 @@
 
     <label for="operario">Operario:</label><br>
     <select name="operario" id="operario">
-        <option value="">{{$tarea['operario'] }}</option>
-        <option value="1">Juan Fernandez</option>
-        <option value="2">José María Gil</option>
-        <option value="3">David López</option>
+        <option>{{$tarea['operario'] }}</option>
+        <option>Juan Fernandez</option>
+        <option>José María Gil</option>
+        <option>David López</option>
     </select><br><br>
 
     <label for="fecharealizacion">Fecha de realización:</label><br>

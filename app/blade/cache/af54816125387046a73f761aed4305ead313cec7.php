@@ -75,7 +75,7 @@
     <select name="provincia" id="provincia">
         <option value=""><?php echo e($tarea['provincia']); ?></option>
         <option value="01">Alava/Araba</option>
-        <option>Albacete</option>
+        <option value="02">Albacete</option>
         <option value="03">Alicante</option>
         <option value="04">Almería</option>
         <option value="05">Avila</option>
@@ -137,10 +137,10 @@
 
     <label for="operario">Operario:</label><br>
     <select name="operario" id="operario">
-        <option value=""><?php echo e($tarea['operario']); ?></option>
-        <option value="1">Juan Fernandez</option>
-        <option value="2">José María Gil</option>
-        <option value="3">David López</option>
+        <option><?php echo e($tarea['operario']); ?></option>
+        <option>Juan Fernandez</option>
+        <option>José María Gil</option>
+        <option>David López</option>
     </select><br><br>
 
     <label for="fecharealizacion">Fecha de realización:</label><br>

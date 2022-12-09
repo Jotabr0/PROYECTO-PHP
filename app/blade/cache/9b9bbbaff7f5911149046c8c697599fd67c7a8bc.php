@@ -1,3 +1,4 @@
+<?php echo $__env->yieldContent('validacion'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
