@@ -12,3 +12,4 @@ $password='';
 
 //Base de datos a utilizar
 $db='miproyectophp';
+

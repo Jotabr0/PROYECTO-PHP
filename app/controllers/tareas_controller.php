@@ -30,6 +30,10 @@ function menuCrear(){
 }
 
 function guardar(){
+   
+   // print_r($_POST);
+   // exit;
+
    include 'models/tareas_model.php';
 
    $dni=$_POST['dni'];
