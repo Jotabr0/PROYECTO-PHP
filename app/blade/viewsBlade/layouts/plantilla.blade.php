@@ -45,7 +45,9 @@
                 </div>
 
                 <div>
+                    <a href="index.php?controller=usuarios&action=listar">
                     <h1>Gestion de usuarios</h1>
+                    </a>
                 </div>
 
             </div>

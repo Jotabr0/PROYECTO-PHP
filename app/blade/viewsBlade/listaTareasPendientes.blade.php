@@ -30,7 +30,7 @@
             <td>{{$tarea['fecharealizacion']}}</td>
             <td>{{$tarea['estado']}}</td>
             <td><a href="index.php?controller=tareas&action=borrar&id={{$tarea['id']}}">Borrar</a></td>
-            <td><a href="">Modificar</a></td>
+            <td><a href="index.php?controller=tareas&action=verModificar&id={{$tarea['id']}}">Modificar</a></td>
             <td><a href="index.php?controller=tareas&action=ver&id={{$tarea['id']}}" target="_blank">Vista Completa</a></td>
         </tr>
     @endforeach

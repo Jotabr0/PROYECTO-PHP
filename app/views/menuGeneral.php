@@ -32,10 +32,11 @@
                 <h1>Buscar/Filtrar tareas</h1>
             </div>
 
+            <a href="index.php?controller=usuarios&action=listar">
             <div>
                 <h1>Gestion Usuarios</h1>
             </div>
-            
+            </a>
 
         </div>
         <div class="pie"></div>
