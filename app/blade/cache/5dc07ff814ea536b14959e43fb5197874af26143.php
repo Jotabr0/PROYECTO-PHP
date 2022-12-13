@@ -30,7 +30,7 @@
             <td><?php echo e($tarea['fecharealizacion']); ?></td>
             <td><?php echo e($tarea['estado']); ?></td>
             <td><a href="index.php?controller=tareas&action=borrar&id=<?php echo e($tarea['id']); ?>">Borrar</a></td>
-            <td><a href="">Modificar</a></td>
+            <td><a href="index.php?controller=tareas&action=verModificar&id=<?php echo e($tarea['id']); ?>">Modificar</a></td>
             <td><a href="index.php?controller=tareas&action=ver&id=<?php echo e($tarea['id']); ?>" target="_blank">Vista Completa</a></td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

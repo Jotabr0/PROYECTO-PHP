@@ -4,12 +4,17 @@ function menuGeneral(){
    include 'views/menuGeneral.php';
 }
 
+function login(){
+   include 'views/loginBlade.php';
+}
+
 //index.php?controller=tareas&action=listar
 
 function listar(){
     require 'models/tareas_model.php';
 
     $tareas = getTareas();
+    
 
     include 'views/listaTareasBlade.php';
 }
@@ -26,6 +31,8 @@ function listarPendientes(){
 
 //index.php?controller=tareas&action=menuCrear
 function menuCrear(){
+   require 'models/tareas_model.php';
+   $provincias = getProvincias();
    include 'views/nuevaTareaBlade.php';
 }
 

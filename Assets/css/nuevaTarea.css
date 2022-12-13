@@ -64,6 +64,11 @@
     
 }
 
+/* .formulario{
+    overflow:visible;
+    background-color: #5b399e;
+} */
+
 .confirmarborrar{
     text-align: center;
     background-color: rgba(2, 52, 52, 0.138);
@@ -111,11 +116,16 @@ select {
     border-style: solid;
 }
 
-
+html{
+    min-height: 100%;
+    position: relative;
+}
 
 footer {
     
-    position: relative;
+    position: absolute;
+    bottom: 0px;
+    margin-top: 50px;
     width: 100%;
     background-color: #7483af;
     text-align: center;

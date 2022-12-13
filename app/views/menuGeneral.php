@@ -1,3 +1,5 @@
+<?php include(__DIR__.'/../models/comprobarLogueado.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +16,9 @@
         <div class="cabecera">
             <div>
                 <h1>Panel de Gestión</h1>
+            </div>
+            <div>
+                <a href="index.php?controller=usuarios&action=logout">Cerrar sesión</a>
             </div>
         </div>
         <div class="centro">

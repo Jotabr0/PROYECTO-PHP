@@ -24,6 +24,19 @@ function getTareas()
 
 }
 
+function getProvincias(){
+
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $result = $db->query("SELECT * FROM provincias");
+   $provincias = array();
+   while ($provincia = $result->fetch())
+      $provincias[] = $provincia;
+
+   return $provincias;
+
+}
+
 function getTareasPendientes(){
 
    
