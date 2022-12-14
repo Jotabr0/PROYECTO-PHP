@@ -155,6 +155,7 @@ function verModificar(){
 
 function modificar(){
    include 'models/tareas_model.php';
+   
    $id=$_GET['id'];
    $dni=$_POST['dni'];
    $contacto=$_POST['contacto'];

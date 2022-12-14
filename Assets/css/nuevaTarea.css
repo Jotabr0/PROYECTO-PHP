@@ -88,6 +88,10 @@
     font-size: 0.5em;
 }
 
+.lateral div a{
+  text-decoration: none;
+}
+
 .cuerpo {
     flex: 10 0 0;
     margin-top: 20px;
