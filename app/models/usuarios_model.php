@@ -36,6 +36,20 @@ function getUsuario($id)
    return $usuario;
 }
 
+
+function usuarioLogin($user,$pass)
+{
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $query = 'SELECT * FROM usuarios WHERE user = ? AND pass = ?';
+   $stmt = $db->prepare($query);
+   $stmt->execute(array($user,$pass));
+   $usuario = $stmt->fetch();
+   return $usuario;
+}
+
+
+
 function borraUsuario($id){
 
    $bd = conexion::getInstance();

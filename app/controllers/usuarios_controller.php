@@ -79,6 +79,18 @@ function guardar()
 function login()
 {
    require 'models/usuarios_model.php';
+
+
+   // if(isset($_COOKIE['recuerdo'])){
+   //    header("location:index.php?controller=tareas&action=menuGeneral");
+   // }
+
+   // session_start();
+   // if(isset($_SESSION['usuario'])){
+   //    header("location:index.php?controller=tareas&action=menuGeneral");
+   // }
+
+   
    include 'views/loginBlade.php';
 }
 
@@ -86,7 +98,13 @@ function logout()
 {
    require 'models/usuarios_model.php';
    session_start();
+    
+   if(isset($_COOKIE['recuerdo'])) { 
+      setcookie ('recuerdo',""); }
+      
    session_unset();
    session_destroy();
-   include 'views/loginBlade.php';
+
+   header("location:index.php?controller=usuarios&action=login");
+   //include 'views/loginBlade.php';
 }

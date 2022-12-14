@@ -139,8 +139,8 @@
     <select name="operario" id="operario">
         <option><?php echo e($tarea['operario']); ?></option>
         <option>Juan Fernandez</option>
-        <option>José María Gil</option>
-        <option>David López</option>
+        <option>Jose Maria Gil</option>
+        <option>David Lopez</option>
     </select><br><br>
 
     <label for="fecharealizacion">Fecha de realización:</label><br>

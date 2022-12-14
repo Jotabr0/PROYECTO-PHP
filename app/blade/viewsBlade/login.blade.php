@@ -1,4 +1,4 @@
-@extends('layouts/plantilla')
+@extends('layouts/plantillaLogin')
 
 
 @section('pestaña', 'Login')

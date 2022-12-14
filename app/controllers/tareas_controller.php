@@ -4,9 +4,10 @@ function menuGeneral(){
    include 'views/menuGeneral.php';
 }
 
-function login(){
-   include 'views/loginBlade.php';
+function menuOperario(){
+   include 'views/menuOperario.php';
 }
+
 
 //index.php?controller=tareas&action=listar
 
@@ -19,6 +20,19 @@ function listar(){
     include 'views/listaTareasBlade.php';
 }
 
+function listarOperario(){
+
+   require 'models/tareas_model.php';
+
+   
+
+   $tareas = getTareasOperarios();
+   
+
+   include 'views/listaTareasOperariosBlade.php';
+
+}
+
 //index.php?controller=tareas&action=listarPendientes
 function listarPendientes(){
    require 'models/tareas_model.php';
@@ -27,6 +41,18 @@ function listarPendientes(){
 
    include 'views/listaTareasPendientesBlade.php';
 
+}
+
+function listarPendientesOperarios(){
+   require 'models/tareas_model.php';
+
+   if ( !isset ( $_GET [ 'nombre' ] ) )
+      die("No has especificado un identificador de tarea.");
+   $nombre = $_GET [ 'nombre' ];
+   
+   $tareas = getTareasPendientesOperario($nombre);
+
+   include 'views/listaTareasPendientesOperariosBlade.php';
 }
 
 //index.php?controller=tareas&action=menuCrear

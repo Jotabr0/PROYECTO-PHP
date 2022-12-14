@@ -1,4 +1,20 @@
-@yield('validacion')
+
+<?php
+session_start();   //Activamos el uso de sesiones
+// if ((!isset($_SESSION['logueado'])) && (!isset($_COOKIE['abierta'])))  // Si no existe la sesión…
+// { //Redirigimos a la página de login con el tipo de error ‘fuera’: que indica que
+//     // se trató de acceder directamente a una página sin loguearse previamente
+   
+//     header("Location:index.php?controller=usuarios&action=login");
+// }
+if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
+    header("Location:index.php?controller=usuarios&action=login");
+ 
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +31,19 @@
 
     <main class="main">
         <div class="cabecera">
+    
+            <div class="infosesion">
+                Usuario: <span><?php echo $_SESSION['usuario'] ?></span><br>
+                Permisos: <span><?php echo $_SESSION['rol'] ?></span><br>
+                Conexión: <span><?php echo date('H:i:s', $_SESSION['hora']) ?></span>
+            </div>
             <div>
                 <h1>@yield('tituloCabecera')</h1>
             </div>
+            <div class="cerrarsesion">
+                <a href="index.php?controller=usuarios&action=logout">Cerrar sesión</a>
+            </div>
+            
         </div>
         <div class="centro">
             <div class="lateral">

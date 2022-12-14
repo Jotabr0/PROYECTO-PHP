@@ -13,4 +13,4 @@
  
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts/plantilla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\2DAW\DWEC\Ejemplos\Ejercicios PHP\PROYECTO PHP\app\blade\viewsBlade/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts/plantillaLogin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\2DAW\DWEC\Ejemplos\Ejercicios PHP\PROYECTO PHP\app\blade\viewsBlade/login.blade.php ENDPATH**/ ?>

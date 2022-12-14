@@ -1,17 +1,9 @@
-
 <?php
 session_start();   //Activamos el uso de sesiones
-// if ((!isset($_SESSION['logueado'])) && (!isset($_COOKIE['abierta'])))  // Si no existe la sesión…
-// { //Redirigimos a la página de login con el tipo de error ‘fuera’: que indica que
-//     // se trató de acceder directamente a una página sin loguearse previamente
-   
-//     header("Location:index.php?controller=usuarios&action=login");
-// }
-if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
+if(!isset($_SESSION['rol']) || $_SESSION['rol']!='operario'){
     header("Location:index.php?controller=usuarios&action=login");
  
 }
-
 ?>
 
 
@@ -49,14 +41,14 @@ if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
             <div class="lateral">
 
                 <div>
-                    <a href="index.php?controller=tareas&action=listar">
+                    <a href="index.php?controller=tareas&action=listarOperario">
                         <h1>Tareas/Incidencias</h1>
                     </a>
                 </div>
 
                 <div>
-                    <a href="index.php?controller=tareas&action=menuCrear">
-                        <h1>Añadir nueva incidencia/tarea</h1>
+                    <a href="index.php?controller=tareas&action=listarPendientesOperarios&nombre=<?php echo $_SESSION['nombre'] ?>">
+                        <h1>Mis tareas pendientes</h1>
                     </a>
                 </div>
 
@@ -64,17 +56,9 @@ if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
                     <h1>Buscar/Filtrar tareas</h1>
                 </div>
 
-                <div>
-                    <a href="index.php?controller=tareas&action=listarPendientes">
-                        <h1>Tareas Pendientes</h1>
-                    </a>
-                </div>
+                
 
-                <div>
-                    <a href="index.php?controller=usuarios&action=listar">
-                    <h1>Gestion de usuarios</h1>
-                    </a>
-                </div>
+                
 
             </div>
 
@@ -94,4 +78,4 @@ if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
 
 </body>
 
-</html><?php /**PATH D:\2DAW\DWEC\Ejemplos\Ejercicios PHP\PROYECTO PHP\app\blade\viewsBlade/layouts/plantilla.blade.php ENDPATH**/ ?>
+</html><?php /**PATH D:\2DAW\DWEC\Ejemplos\Ejercicios PHP\PROYECTO PHP\app\blade\viewsBlade/layouts/plantillaOperarios.blade.php ENDPATH**/ ?>

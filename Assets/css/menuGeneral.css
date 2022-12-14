@@ -15,11 +15,43 @@
     background-color: rgba(0, 29, 108, 0.545);
     text-align: center;
     box-sizing: border-box;
-    display: block;
+    display:inline-flex;
     float: none;
     line-height: 14px;
     position: static;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
+
+.cerrarsesion{
+    background-color: rgb(95, 119, 139);
+    padding: 10px;
+    position: absolute;
+    right: 50px;
+    border-radius: 10px;
+    
+    
+  }
+  
+  .cerrarsesion a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .infosesion{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    line-height: 1.4em;
+  
+  }
+  
+  .infosesion span{
+    text-transform: uppercase;
+    color: #213c5a;
+  }
 
 .cabecera h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -47,3 +79,4 @@ div a{
     
     text-decoration: none;
 }
+

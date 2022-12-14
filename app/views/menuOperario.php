@@ -1,17 +1,18 @@
-<!-- include(__DIR__.'/../models/comprobarLogueado.php');  -->
+<!-- include(__DIR__ . '/../models/comprobarLogueado.php'); ?> -->
 
 <?php
 
 session_start();   //Activamos el uso de sesiones
 
 
-if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
+if(!isset($_SESSION['rol']) || $_SESSION['rol']!='operario'){
     header("Location:index.php?controller=usuarios&action=login");
  
 }
 
-?>
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@ if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
 <body>
     <main>
         <div class="cabecera">
-        <div class="infosesion">
+            <div class="infosesion">
                 Usuario: <span><?php echo $_SESSION['usuario'] ?></span><br>
                 Permisos: <span><?php echo $_SESSION['rol'] ?></span><br>
                 Conexión: <span><?php echo date('H:i:s', $_SESSION['hora']) ?></span>
@@ -35,32 +36,29 @@ if(!isset($_SESSION['rol']) || $_SESSION['rol']!='admin'){
             <div>
                 <h1>Panel de Gestión</h1>
             </div>
-            
+
             <div class="cerrarsesion">
                 <a href="index.php?controller=usuarios&action=logout">Cerrar sesión</a>
             </div>
         </div>
         <div class="centro">
-            <a href="index.php?controller=tareas&action=listar">
+            <a href="index.php?controller=tareas&action=listarOperario">
                 <div>
                     <h1>Incidencias/tareas</h1>
                 </div>
             </a>
-            <a href="index.php?controller=tareas&action=menuCrear">
             <div>
-                <h1>Añadir nueva incidencia/tarea</h1>
+                <a href="index.php?controller=tareas&action=listarPendientesOperarios&nombre=<?php echo $_SESSION['nombre'] ?>">
+                    <h1>Mis tareas pendientes</h1>
+                </a>
             </div>
-            </a>
-    
+
+
             <div>
                 <h1>Buscar/Filtrar tareas</h1>
             </div>
 
-            <a href="index.php?controller=usuarios&action=listar">
-            <div>
-                <h1>Gestion Usuarios</h1>
-            </div>
-            </a>
+
 
         </div>
         <div class="pie"></div>

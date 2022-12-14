@@ -24,6 +24,21 @@ function getTareas()
 
 }
 
+function getTareasOperarios()
+{
+   require("paginacionTareasOperarios.php");
+
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $result = $db->query("SELECT * FROM tareas LIMIT $empezar_desde, $tamano_paginas");
+   $tareas = array();
+   while ($tarea = $result->fetch())
+      $tareas[] = $tarea;
+
+   return $tareas;
+
+}
+
 function getProvincias(){
 
    $bd = conexion::getInstance();
@@ -51,6 +66,22 @@ function getTareasPendientes(){
    return $tareas;
 
 }
+
+function getTareasPendientesOperario($nombre){
+
+   
+   $bd = conexion::getInstance();
+   $db = $bd->connect();
+   $result = $db->query("SELECT * FROM tareas WHERE estado='P' AND operario='$nombre'");
+   $tareas = array();
+   while ($tarea = $result->fetch())
+      $tareas[] = $tarea;
+
+   return $tareas;
+
+}
+
+
 
 function getTarea($id)
 {

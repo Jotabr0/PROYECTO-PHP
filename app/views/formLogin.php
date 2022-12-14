@@ -1,4 +1,4 @@
-<div>	
+<!-- <div>	
   <div>
     <form method="POST">
       <label for="name">Usuario:
@@ -9,22 +9,22 @@
         <input type="password" name="password" class="form-control" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>"/>            
       </label>
       <br/>
-      <label><input type="checkbox" name="recuerdo" <?php if(isset($_COOKIE['recuerdo'])){echo " checked";} ?> >Recuérdeme :)</label>
-      <br/>     
-      
-      <br/>     
+      <label><input type="checkbox" name="recuerdo" <?php if(isset($_COOKIE['recuerdo'])){echo " checked";} ?> >No cerrar sesión</label>
+      <br/>   <br/>        
+      <input type="submit" value="Enviar" name="submit" class="boton" />
+    </form>
+  </div>
+</div> -->
 
-      <?php
-        if(isset($error)){
-           if ($error == "datos") {
-               echo '<div class="alert alert-danger" style="margin-top:5px;">' . "Tu usuario o/y tu contraseña no son correctos, inténtelo de nuevo!! :( <br/>" . '</div>';
-             }
-          elseif ($error == "fuera") {
-               echo '<div class="alert alert-danger" style="margin-top:5px;">' . "No puede acceder  directamente en esta página, ha de loguearse!! :O <br/>" . '</div>';          
-             }
-        }     
-      ?>      
-      <input type="submit" value="Enviar" name="submit" class="btn btn-success" />
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="POST">
+    <input type="text" name="usuario" placeholder="Usuario" value="<?php if(isset($_COOKIE['usuario'])) { echo $_COOKIE['usuario']; } ?>" /> 
+    <input type="password" name="password" placeholder="Contraseña" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>"/>
+    <div style="text-align: left;">
+    <input style="width: auto;" type="checkbox" name="recuerdo" <?php if(isset($_COOKIE['recuerdo'])){echo " checked";} ?>><label> No cerrar sesión </label> 
+    </div>
+    <input type="submit" value="Enviar" name="submit" class="boton" />
     </form>
   </div>
 </div>

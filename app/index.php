@@ -3,7 +3,7 @@
 
 define ('CONTROLLERS_FOLDER',"controllers/");
 
-define('DEFAULT_CONTROLLER',"tareas");
+define('DEFAULT_CONTROLLER',"usuarios");
 
 define('DEFAULT_ACTION',"login");
 
